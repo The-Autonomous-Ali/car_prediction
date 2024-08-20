@@ -1,0 +1,14 @@
+numpy==1.23.5
+Flask
+gunicorn
+scikit-learn
+pandas
+PyYAML
+evidently==0.1.58.dev0
+dill
+matplotlib
+xgboost
+category_encoders
+boto3
+awscli
+-e .
