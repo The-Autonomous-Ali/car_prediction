@@ -1,0 +1,55 @@
+[ 2025-01-10 18:08:42,201 ] root - INFO - Entered the start_data_ingestion method of TrainPipeline class
+[ 2025-01-10 18:08:42,201 ] root - INFO - Getting the data from MongoDB
+[ 2025-01-10 18:08:42,201 ] root - INFO - Entered initiate_data_ingestion method of DataIngestion class
+[ 2025-01-10 18:08:42,201 ] root - INFO - Loading data from local file: D:\Dataset\CAR DETAILS FROM CAR DEKHO.csv
+[ 2025-01-10 18:08:42,217 ] root - INFO - Loaded data with shape: (4340, 8)
+[ 2025-01-10 18:08:42,217 ] root - INFO - Loaded data from local file
+[ 2025-01-10 18:08:42,217 ] root - INFO - Entered split_data_as_train_test method of DataIngestion class
+[ 2025-01-10 18:08:42,217 ] root - INFO - Performed train-test split on the dataframe
+[ 2025-01-10 18:08:42,217 ] root - INFO - Saving train and test datasets to files.
+[ 2025-01-10 18:08:42,241 ] root - INFO - Train and test datasets saved successfully.
+[ 2025-01-10 18:08:42,241 ] root - INFO - Performed train-test split on the dataset
+[ 2025-01-10 18:08:42,241 ] root - INFO - Data ingestion artifact: DataIngestionArtifact(trained_file_path='artifact\\01_10_2025_18_08_41\\data_ingestion\\ingested\\train.csv', test_file_path='artifact\\01_10_2025_18_08_41\\data_ingestion\\ingested\\test.csv')
+[ 2025-01-10 18:08:42,241 ] root - INFO - Got the train_set and test_set from MongoDB
+[ 2025-01-10 18:08:42,241 ] root - INFO - Exited the start_data_ingestion method of TrainPipeline class
+[ 2025-01-10 18:08:42,241 ] root - INFO - Entered the start_data_validation method of TrainPipeline class
+[ 2025-01-10 18:08:42,249 ] root - INFO - Starting data validation
+[ 2025-01-10 18:08:42,305 ] root - INFO - Is required column present: [True]
+[ 2025-01-10 18:08:42,305 ] root - INFO - All required columns present in training dataframe: True
+[ 2025-01-10 18:08:42,305 ] root - INFO - Is required column present: [True]
+[ 2025-01-10 18:08:42,305 ] root - INFO - All required columns present in testing dataframe: True
+[ 2025-01-10 18:08:43,689 ] root - INFO - 1/8 drift detected.
+[ 2025-01-10 18:08:43,689 ] root - INFO - Data validation artifact: DataValidationArtifact(validation_status=True, message='Drift not detected', drift_report_file_path='artifact\\01_10_2025_18_08_41\\data_validation\\drift_report\\report.yaml')
+[ 2025-01-10 18:08:43,689 ] root - INFO - Performed the data validation operation
+[ 2025-01-10 18:08:43,689 ] root - INFO - Exited the start_data_validation method of TrainPipeline class
+[ 2025-01-10 18:08:43,689 ] root - INFO - Entered the start_data_transformation method of TrainPipeline class
+[ 2025-01-10 18:08:43,689 ] root - INFO - Starting data transformation
+[ 2025-01-10 18:08:43,689 ] root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[ 2025-01-10 18:08:43,689 ] root - INFO - Initialized StandardScaler, OneHotEncoder, and OrdinalEncoder
+[ 2025-01-10 18:08:43,689 ] root - INFO - Created preprocessor object from ColumnTransformer
+[ 2025-01-10 18:08:43,689 ] root - INFO - Reading data from local file: artifact\01_10_2025_18_08_41\data_ingestion\ingested\train.csv
+[ 2025-01-10 18:08:43,705 ] root - INFO - Reading data from local file: artifact\01_10_2025_18_08_41\data_ingestion\ingested\test.csv
+[ 2025-01-10 18:08:43,721 ] root - INFO - Added 'brand' column and dropped 'name' column from Training dataset
+[ 2025-01-10 18:08:43,721 ] root - INFO - Added 'brand' column and dropped 'name' column from Test dataset
+[ 2025-01-10 18:08:43,721 ] root - INFO - Dropped specified columns from Training and Test datasets
+[ 2025-01-10 18:08:43,721 ] root - INFO - Transforming target column using TargetValueMapping
+[ 2025-01-10 18:08:43,721 ] root - INFO - Successfully transformed target column in training and testing datasets
+[ 2025-01-10 18:08:43,721 ] root - INFO - Applying preprocessing object on training dataframe and testing dataframe
+[ 2025-01-10 18:08:43,752 ] root - INFO - Entered the save_object method of utils
+[ 2025-01-10 18:08:43,768 ] root - INFO - Exited the save_object method of utils
+[ 2025-01-10 18:08:43,768 ] root - INFO - Saved the preprocessor object and transformed datasets
+[ 2025-01-10 18:08:43,768 ] root - INFO - Performed the data transformation operation
+[ 2025-01-10 18:08:43,768 ] root - INFO - Exited the start_data_transformation method of TrainPipeline class
+[ 2025-01-10 18:08:43,768 ] root - INFO - Entered the start_model_trainer method of TrainPipeline class
+[ 2025-01-10 18:08:43,768 ] root - INFO - Entered initiate_model_trainer method of ModelTrainer class
+[ 2025-01-10 18:08:43,783 ] root - INFO - Using neuro_mf to get best model object and report
+[ 2025-01-10 18:08:43,799 ] neuro_mf - INFO - Started Initializing model from config file
+[ 2025-01-10 18:08:43,864 ] neuro_mf - INFO - {'algorithm': 'kd_tree', 'weights': 'uniform', 'n_neighbors': 3}
+[ 2025-01-10 18:08:43,927 ] neuro_mf - INFO - {'max_depth': 10, 'max_features': 'sqrt', 'n_estimators': 3}
+[ 2025-01-10 18:08:43,927 ] neuro_mf - INFO - Initialized model: [InitializedModelDetail(model_serial_number='module_0', model=KNeighborsClassifier(algorithm='kd_tree', n_neighbors=3), param_grid_search={'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute'], 'weights': ['uniform', 'distance'], 'n_neighbors': [3, 5, 9]}, model_name='sklearn.neighbors.KNeighborsClassifier'), InitializedModelDetail(model_serial_number='module_1', model=RandomForestClassifier(max_depth=10, n_estimators=3), param_grid_search={'max_depth': [10, 15, 20], 'max_features': ['sqrt', 'log2'], 'n_estimators': [3, 5, 9]}, model_name='sklearn.ensemble.RandomForestClassifier')]
+[ 2025-01-10 18:08:43,927 ] neuro_mf - INFO - ('**************************************************', 'training KNeighborsClassifier', '**************************************************')
+[ 2025-01-10 18:08:43,927 ] neuro_mf - INFO - {'cv': 3, 'verbose': 3}
+[ 2025-01-10 18:08:49,076 ] neuro_mf - INFO - ('**************************************************', 'training RandomForestClassifier', '**************************************************')
+[ 2025-01-10 18:08:49,084 ] neuro_mf - INFO - {'cv': 3, 'verbose': 3}
+[ 2025-01-10 18:08:51,583 ] neuro_mf - INFO - Acceptable model found:GridSearchedBestModel(model_serial_number='module_0', model=KNeighborsClassifier(algorithm='kd_tree', n_neighbors=3), best_model=KNeighborsClassifier(algorithm='brute', n_neighbors=9, weights='distance'), best_parameters={'algorithm': 'brute', 'n_neighbors': 9, 'weights': 'distance'}, best_score=0.40841410373342607)
+[ 2025-01-10 18:08:51,583 ] neuro_mf - INFO - Best model: GridSearchedBestModel(model_serial_number='module_0', model=KNeighborsClassifier(algorithm='kd_tree', n_neighbors=3), best_model=KNeighborsClassifier(algorithm='brute', n_neighbors=9, weights='distance'), best_parameters={'algorithm': 'brute', 'n_neighbors': 9, 'weights': 'distance'}, best_score=0.40841410373342607)

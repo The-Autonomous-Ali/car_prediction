@@ -1,0 +1,13 @@
+[ 2025-01-09 02:59:12,901 ] root - INFO - Entered the start_data_ingestion method of TrainPipeline class
+[ 2025-01-09 02:59:12,901 ] root - INFO - Entered initiate_data_ingestion method of DataIngestion class
+[ 2025-01-09 02:59:12,901 ] root - INFO - Loading data from local file: D:\Dataset\CAR DETAILS FROM CAR DEKHO.csv
+[ 2025-01-09 02:59:13,247 ] root - INFO - Loaded data with shape: (4340, 8)
+[ 2025-01-09 02:59:13,247 ] root - INFO - Loaded data from local file
+[ 2025-01-09 02:59:13,247 ] root - INFO - Entered split_data_as_train_test method of DataIngestion class
+[ 2025-01-09 02:59:13,325 ] root - INFO - Performed train-test split on the dataframe
+[ 2025-01-09 02:59:13,341 ] root - INFO - Saving train and test datasets to files.
+[ 2025-01-09 02:59:13,450 ] root - INFO - Train and test datasets saved successfully.
+[ 2025-01-09 02:59:13,450 ] root - INFO - Performed train-test split on the dataset
+[ 2025-01-09 02:59:13,450 ] root - INFO - Data ingestion artifact: DataIngestionArtifact(trained_file_path='artifact\\01_09_2025_02_59_12\\data_ingestion\\ingested\\train.csv', test_file_path='artifact\\01_09_2025_02_59_12\\data_ingestion\\ingested\\test.csv')
+[ 2025-01-09 02:59:13,466 ] root - INFO - Got the train_set and test_set from local data
+[ 2025-01-09 02:59:13,466 ] root - INFO - Exited the start_data_ingestion method of TrainPipeline class

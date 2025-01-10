@@ -1,0 +1,45 @@
+columns:
+  - name: category
+  - year: int
+  - selling_price: int
+  - km_driven: int
+  - fuel: category
+  - seller_type: category
+  - transmission: category
+  - owner: category
+
+numerical_columns:
+  - year
+  - selling_price
+  - km_driven
+
+categorical_columns:
+  - name
+  - fuel
+  - seller_type
+  - transmission
+  - owner
+
+drop_columns:
+  - name
+  - brand
+  
+
+# for data transformation
+num_features:
+  - selling_price
+  - km_driven
+
+
+or_columns:
+  - owner
+  - seller_type
+ 
+
+oh_columns:
+  - fuel
+  - transmission
+
+transform_columns:
+  - km_driven
+  

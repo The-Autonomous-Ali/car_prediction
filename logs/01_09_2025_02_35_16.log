@@ -1,0 +1,2 @@
+[ 2025-01-09 02:36:32,620 ] root - INFO - Entered the start_data_ingestion method of TrainPipeline class
+[ 2025-01-09 02:36:32,620 ] root - INFO - Entered initiate_data_ingestion method of DataIngestion class

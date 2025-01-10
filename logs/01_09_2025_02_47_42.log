@@ -1,0 +1,3 @@
+[ 2025-01-09 02:47:45,410 ] root - INFO - Entered the start_data_ingestion method of TrainPipeline class
+[ 2025-01-09 02:47:45,410 ] root - INFO - Entered initiate_data_ingestion method of DataIngestion class
+[ 2025-01-09 02:47:45,410 ] root - INFO - Loading data from local file: D:\Dataset\CAR DETAILS FROM CAR DEKHO.csv
